@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+# 
+# Opens the Github page for the current repo
+# 
+
+url = `git config --get remote.origin.url`
+
+if url.match(/^git\@github.com:(.*)\.git/)
+  system "open https://github.com/#{$1}"
+end

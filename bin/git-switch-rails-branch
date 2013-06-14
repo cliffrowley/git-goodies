@@ -1,0 +1,81 @@
+#!/usr/bin/env ruby
+# 
+# Switches between Rails branches, upping/downing migrations as necessary
+# 
+# I recommend adding a git alias, e.g.:
+#
+#   git config --global alias.srb switch-rails-branch
+# 
+# Usage:
+# 
+#   git switch-rails-branch <branch>: switch to <branch>
+#
+# Options:
+#
+#   -z    Use Zeus
+# 
+
+require 'getoptlong'
+
+opts = GetoptLong.new(
+  [ '--zeus', '-z', GetoptLong::NO_ARGUMENT ]
+)
+
+use_zeus = false
+
+opts.each do |opt, arg|
+  case opt
+  when '--zeus'
+    use_zeus = true
+  end
+end
+
+if ARGV.empty?
+  puts "Usage: git switch-branch [<branch>] [-z]"
+  exit 0
+end
+
+current_branch = `git rev-parse --abbrev-ref HEAD`.strip
+new_branch     = ARGV.shift
+
+unless system "git show-ref --verify --quiet 'refs/heads/#{new_branch}'"
+  puts "Branch '#{new_branch}' does not exist"
+  exit 1
+end
+
+if current_branch == new_branch
+  puts "Already on branch '#{new_branch}'"
+  exit 0
+end
+
+unless `git status --porcelain`.empty?
+  puts "Working directory not clean, aborting!"
+  exit 1
+end
+
+puts "Reverting migrations.."
+migrations = `git diff --diff-filter=A --name-only #{new_branch} #{current_branch} | grep db/migrate`
+migrations.split.reverse.each do |migration|
+  if migration =~ /\/([^\/]*)\.rb/
+    puts "Reverting '#{$1}'.."
+    unless system "#{use_zeus ? 'zeus' : 'bundle exec'} rake db:migrate:down VERSION=#{$1}"
+      puts "Error running migration, aborting!"
+      exit 1
+    end
+  end
+end
+
+puts "Reverting schema.rb.."
+system "git checkout db/schema.rb"
+
+system "git checkout #{new_branch}"
+
+puts "Running migrations for branch '#{new_branch}.."
+unless system "#{use_zeus ? 'zeus' : 'bundle exec'} rake db:migrate"
+  puts "Error running migrations, aborting!"
+end
+
+puts "Preparing test database for branch '#{new_branch}.."
+system "#{use_zeus ? 'zeus' : 'bundle exec'} rake db:test:prepare"
+
+system "git status"

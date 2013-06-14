@@ -1,0 +1,24 @@
+#!/bin/bash
+# 
+# Lists files added between branches
+# 
+# I recommend adding a git alias, e.g.:
+#
+#   git config --global alias.la list-added
+# 
+# Usage:
+# 
+#   git list-added:             list adds between master and current branch
+#   git list-added <branch>:    list adds between master and <branch>
+#   git list-added <br1> <br2>: list adds between <br1> and <br2>
+# 
+
+BRANCH=$(git name-rev HEAD 2> /dev/null | awk "{ print \$2 }")
+
+if [ "$2" != "" ]; then
+  git diff --diff-filter=A --name-only $1 $2
+elif [ "$1" != "" ]; then
+  git diff --diff-filter=A --name-only master $1
+else
+  git diff --diff-filter=A --name-only master $BRANCH
+fi

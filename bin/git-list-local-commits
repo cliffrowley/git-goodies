@@ -1,0 +1,10 @@
+#!/bin/sh -e
+# 
+# Lists commits that have not been pushed to the remote
+# 
+
+ref=$(git symbolic-ref HEAD)
+branch=${ref#refs/heads/}
+remote=$(git rev-parse --verify --quiet --symbolic-full-name $branch@{u})
+
+git log origin/${branch}..${branch} $*

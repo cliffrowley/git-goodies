@@ -31,7 +31,7 @@ opts.each do |opt, arg|
 end
 
 if ARGV.empty?
-  puts "Usage: git switch-branch [<branch>] [-z]"
+  puts "Usage: git switch-rails-branch [<branch>] [-z]"
   exit 0
 end
 

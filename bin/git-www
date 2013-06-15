@@ -1,0 +1,20 @@
+#!/usr/bin/env ruby
+# 
+# Opens the Github/BitBucket page for the current repo
+# 
+
+branch = `git symbolic-ref --short HEAD`.strip
+remote = `git rev-parse --verify --quiet --symbolic-full-name "#{branch}@{u}"`.split.first
+
+if remote =~ /refs\/remotes\/([^\/]*)\/#{branch}/
+  url = `git config --get remote.#{$1}.url`.strip
+  puts url
+  if url =~ /github.com:(.*)\.git/
+    system "open https://github.com/#{$1}"
+  elsif url =~ /bitbucket.org\/(.*)\.git/
+    system "open https://bitbucket.org/#{$1}"
+  end
+else
+  puts "Branch '#{branch}' has no remote."
+  exit 1
+end

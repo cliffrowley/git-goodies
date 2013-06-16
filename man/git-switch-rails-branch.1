@@ -1,0 +1,42 @@
+.\" generated with Ronn/v0.7.3
+.\" http://github.com/rtomayko/ronn/tree/0.7.3
+.
+.TH "GIT\-SWITCH\-RAILS\-BRANCH" "1" "June 2013" "" "Git Goodies"
+.
+.SH "NAME"
+\fBgit\-switch\-rails\-branch\fR \- Switch cleanly between branches in a Rails project
+.
+.SH "SYNOPSIS"
+\fBgit\-switch\-rails\-branch\fR [\fIbranch\fR] [\-z]
+.
+.SH "DESCRIPTION"
+Switches cleanly between branches in a Rails project by ensuring migrations in the current branch are rolled back and migrations in the destination branch are applied\.
+.
+.P
+Can use Zeus to speed up the process\.
+.
+.SH "OPTIONS"
+.
+.nf
+
+<branch>
+
+The branch to switch to\.
+
+\-z
+
+Use Zeus to execute Rake\.
+.
+.fi
+.
+.SH "EXAMPLES"
+$ git switch\-rails\-branch master
+.
+.SH "AUTHOR"
+Written by Cliff Rowley \fIcliffrowley@gmail\.com\fR
+.
+.SH "REPORTING BUGS"
+\fIhttps://github\.com/cliffrowley/git\-goodies/issues\fR
+.
+.SH "SEE ALSO"
+\fIhttps://github\.com/cliffrowley/git\-goodies/\fR

@@ -5,7 +5,8 @@ MANS = $(wildcard man/git-*.md)
 MAN_HTML = $(MANS:.md=.html)
 MAN_PAGES = $(MANS:.md=.1)
 
-docs: $(MAN_HTML) $(MAN_PAGES)
+# docs: $(MAN_HTML) $(MAN_PAGES)
+docs: $(MAN_PAGES)
 
 install:
 	@mkdir -p $(DESTDIR)$(MANPREFIX)
@@ -16,7 +17,7 @@ install:
 		echo "... installing `basename $(BIN)`"; \
 		cp -f $(BIN) $(DESTDIR)$(PREFIX)/$(BIN); \
 	)
-  # cp -f man/git-*.1 $(DESTDIR)$(MANPREFIX)
+	cp -f man/git-*.1 $(DESTDIR)$(MANPREFIX)
 	@mkdir -p $(PREFIX)/etc/bash_completion.d
 	cp -f etc/bash_completion.sh $(PREFIX)/etc/bash_completion.d/git-goodies
 

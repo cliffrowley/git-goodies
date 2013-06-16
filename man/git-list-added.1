@@ -1,0 +1,67 @@
+.\" generated with Ronn/v0.7.3
+.\" http://github.com/rtomayko/ronn/tree/0.7.3
+.
+.TH "GIT\-LIST\-ADDED" "1" "June 2013" "" "Git Goodies"
+.
+.SH "NAME"
+\fBgit\-list\-added\fR \- List files added between two branches
+.
+.SH "SYNOPSIS"
+\fBgit\-list\-added\fR [<branch1>] [<branch2>]
+.
+.SH "DESCRIPTION"
+Lists files that have been added in <branch2> when compared to <branch1>\.
+.
+.P
+If <branch2> is omitted, master will be compared to <branch1>\. If both branches are omitted, master will be compared to the current branch\.
+.
+.SH "OPTIONS"
+This command does not take any options\.
+.
+.SH "EXAMPLES"
+List files added between the branches \'foo\' and \'bar\':
+.
+.IP "" 4
+.
+.nf
+
+$ git list\-added foo bar
+.
+.fi
+.
+.IP "" 0
+.
+.P
+List the files added between master and the branch \'foo\':
+.
+.IP "" 4
+.
+.nf
+
+$ git list\-added foo
+.
+.fi
+.
+.IP "" 0
+.
+.P
+List the files added between master and the current branch:
+.
+.IP "" 4
+.
+.nf
+
+$ git list\-added
+.
+.fi
+.
+.IP "" 0
+.
+.SH "AUTHOR"
+Written by Cliff Rowley <cliffrowley@gmail\.com>
+.
+.SH "REPORTING BUGS"
+<https://github\.com/cliffrowley/git\-goodies/issues>
+.
+.SH "SEE ALSO"
+<https://github\.com/cliffrowley/git\-goodies/>

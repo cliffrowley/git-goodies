@@ -7,7 +7,7 @@
 \fBgit\-switch\-rails\-branch\fR \- Switch cleanly between branches in a Rails project
 .
 .SH "SYNOPSIS"
-\fBgit\-switch\-rails\-branch\fR [\fIbranch\fR] [\-z]
+\fBgit\-switch\-rails\-branch\fR [<branch>] [\-z]
 .
 .SH "DESCRIPTION"
 Switches cleanly between branches in a Rails project by ensuring migrations in the current branch are rolled back and migrations in the destination branch are applied\.
@@ -19,10 +19,6 @@ Can use Zeus to speed up the process\.
 .
 .nf
 
-<branch>
-
-The branch to switch to\.
-
 \-z
 
 Use Zeus to execute Rake\.
@@ -33,10 +29,10 @@ Use Zeus to execute Rake\.
 $ git switch\-rails\-branch master
 .
 .SH "AUTHOR"
-Written by Cliff Rowley \fIcliffrowley@gmail\.com\fR
+Written by Cliff Rowley <cliffrowley@gmail\.com>
 .
 .SH "REPORTING BUGS"
-\fIhttps://github\.com/cliffrowley/git\-goodies/issues\fR
+<https://github\.com/cliffrowley/git\-goodies/issues>
 .
 .SH "SEE ALSO"
-\fIhttps://github\.com/cliffrowley/git\-goodies/\fR
+<https://github\.com/cliffrowley/git\-goodies/>

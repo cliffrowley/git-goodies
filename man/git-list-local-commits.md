@@ -3,7 +3,7 @@ git-list-local-commits(1) -- List commits that exist only in the local branch
 
 ## SYNOPSIS
 
-`git-list-local-commits` [<options>]
+`git-list-local-commits` [&lt;options&gt;]
 
 ## DESCRIPTION
 
@@ -23,12 +23,12 @@ The current branch must be a tracking branch.
 
 ## AUTHOR
 
-Written by Cliff Rowley <cliffrowley@gmail.com>
+Written by Cliff Rowley &lt;cliffrowley@gmail.com&gt;
 
 ## REPORTING BUGS
 
-<https://github.com/cliffrowley/git-goodies/issues>
+&lt;https://github.com/cliffrowley/git-goodies/issues&gt;
 
 ## SEE ALSO
 
-<https://github.com/cliffrowley/git-goodies/>
+&lt;https://github.com/cliffrowley/git-goodies/&gt;

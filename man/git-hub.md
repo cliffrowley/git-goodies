@@ -19,12 +19,12 @@ If the current repository is not a Github hosted project, `git-hub` will do noth
 
 ## AUTHOR
 
-Written by Cliff Rowley <cliffrowley@gmail.com>
+Written by Cliff Rowley &lt;cliffrowley@gmail.com&gt;
 
 ## REPORTING BUGS
 
-<https://github.com/cliffrowley/git-goodies/issues>
+&lt;https://github.com/cliffrowley/git-goodies/issues&gt;
 
 ## SEE ALSO
 
-<https://github.com/cliffrowley/git-goodies/>
+&lt;https://github.com/cliffrowley/git-goodies/&gt;

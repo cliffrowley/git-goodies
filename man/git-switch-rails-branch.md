@@ -3,7 +3,7 @@ git-switch-rails-branch(1) -- Switch cleanly between branches in a Rails project
 
 ## SYNOPSIS
 
-`git-switch-rails-branch` [<branch>] [-z]
+`git-switch-rails-branch` [&lt;branch&gt;] [-z]
 
 ## DESCRIPTION
 
@@ -12,10 +12,6 @@ Switches cleanly between branches in a Rails project by ensuring migrations in t
 Can use Zeus to speed up the process.
 
 ## OPTIONS
-
-	<branch>
-	
-	The branch to switch to.
 
 	-z
 	
@@ -27,12 +23,12 @@ Can use Zeus to speed up the process.
 
 ## AUTHOR
 
-Written by Cliff Rowley <cliffrowley@gmail.com>
+Written by Cliff Rowley &lt;cliffrowley@gmail.com&gt;
 
 ## REPORTING BUGS
 
-<https://github.com/cliffrowley/git-goodies/issues>
+&lt;https://github.com/cliffrowley/git-goodies/issues&gt;
 
 ## SEE ALSO
 
-<https://github.com/cliffrowley/git-goodies/>
+&lt;https://github.com/cliffrowley/git-goodies/&gt;

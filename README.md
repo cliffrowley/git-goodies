@@ -60,11 +60,10 @@ If you use Homebrew already, I recommend installing Git Goodies from my reposito
 
 ## TODO
 
-- Convert Ruby scripts to Bash
+- Convert Ruby scripts to Bash (?)
 - Overhaul scripts in general for better integration
 - Overhaul git-www and merge with git-hub
 - Refine and refactor git-switch-rails-branch
-- Fix error installing bash completion on OS X without Homebrew
 
 ## Disclaimer
 

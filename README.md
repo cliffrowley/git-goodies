@@ -11,6 +11,7 @@ A small collection of useful Git extensions.
 	- [Linux or OS X without Homebrew](#linux-or-os-x-without-homebrew)
 - [TODO](#todo)
 - [Disclaimer](#disclaimer)
+- [Acknowledgements](#acknowledgements)
 
 ## Commands
 
@@ -68,3 +69,7 @@ If you use Homebrew already, I recommend installing Git Goodies from my reposito
 ## Disclaimer
 
 No guarantee is provided as to the quality of these extensions, and any loss or damage caused as a result of their use is entirely your responsibility.  However bear in mind that I use these daily, and so far haven't managed to break anything.  Your mileage hopefully won't vary.
+
+## Acknowledgements
+
+I borrowed the project structure (including Makefile and man page format) from [git-extras](https://github.com/visionmedia/git-extras), from which I drew inspiration to package up my own collection of git extensions.

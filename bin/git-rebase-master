@@ -1,0 +1,19 @@
+#!/bin/bash
+# 
+# Rebase master into the current branch or the specified topic branch
+# 
+# I recommend adding a git alias, e.g.:
+#
+#   git config --global alias.grbm rebase-master
+# 
+# Usage:
+# 
+#   git rebase-master:          rebase master into the current branch
+#   git rebase-master <branch>: rebase master into <branch>
+# 
+
+if [ "$1" != "" ]; then
+  git rebase master
+else
+  git checkout $1 && git rebase master
+fi

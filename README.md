@@ -1,3 +1,7 @@
+# IMPORTANT NOTE
+
+This project is now retired and unmaintained. I consider this code public domain, so please feel free to do whatever you like with it.
+
 # Git Goodies
 
 A small collection of useful Git extensions.
